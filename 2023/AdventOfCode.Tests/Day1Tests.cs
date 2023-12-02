@@ -7,7 +7,7 @@
     public class Day1Tests
     {
         [Test]
-        public void Day1_Input_ReturnsExepectedValue()
+        public void GetSumOfCalibrationValues_Input_ReturnsExepectedValue()
         {
             var expectedResult = 55343;
             var day1 = new Day1();

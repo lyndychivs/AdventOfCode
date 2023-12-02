@@ -90,7 +90,7 @@
             var word = string.Empty;
             for (int i = 0; i <= input.Length; i++)
             {
-                var calibrationValue = input.Substring(0, i);
+                var calibrationValue = input[..i];
 
                 word = TryExtractWordFromInput(calibrationValue);
                 if (string.IsNullOrWhiteSpace(word))
