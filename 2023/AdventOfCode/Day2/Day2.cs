@@ -75,7 +75,7 @@
 
                 foreach (var colourTotal in colourTotals)
                 {
-                    power = power * colourTotal;
+                    power *= colourTotal;
                 }
 
                 powerList.Add(power);

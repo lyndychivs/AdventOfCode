@@ -1,6 +1,7 @@
 ﻿namespace AdventOfCode.Tests
 {
     using Day1;
+
     using NUnit.Framework;
 
     [TestFixture]

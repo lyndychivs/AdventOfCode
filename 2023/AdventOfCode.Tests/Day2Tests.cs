@@ -3,6 +3,7 @@
     using System.Collections.Generic;
 
     using Day2;
+
     using NUnit.Framework;
 
     [TestFixture]
