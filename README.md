@@ -7,4 +7,4 @@ The [Advent of Code](https://adventofcode.com/) challenges.
 - [x] [Day 3](2023/AdventOfCode/Day3/Day3.cs)
 - [x] [Day 4](2023/AdventOfCode/Day4/Day4.cs)
 - [x] [Day 5](2023/AdventOfCode/Day5/Day5.cs)
-- [ ] [Day 6](2023/AdventOfCode/Day6/Day6.cs)
+- [x] [Day 6](2023/AdventOfCode/Day6/Day6.cs)
