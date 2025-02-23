@@ -11,4 +11,3 @@ The [Advent of Code](https://adventofcode.com/) in C#
 - [x] [Day 7](2023/AdventOfCode/Day7/Day7.cs)
 - [x] [Day 8]()
 - [x] [Day 9]()
-- [x] [Day 10]()
