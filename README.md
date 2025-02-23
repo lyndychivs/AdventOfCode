@@ -1,5 +1,5 @@
 # AdventOfCode
-The [Advent of Code](https://adventofcode.com/) challenges.
+The [Advent of Code](https://adventofcode.com/) in C#
 
 ## 2023
 - [x] [Day 1](2023/AdventOfCode/Day1/Day1.cs)
