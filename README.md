@@ -9,3 +9,4 @@ The [Advent of Code](https://adventofcode.com/) in C#
 - [x] [Day 5](2023/AdventOfCode/Day5/Day5.cs)
 - [x] [Day 6](2023/AdventOfCode/Day6/Day6.cs)
 - [x] [Day 7](2023/AdventOfCode/Day7/Day7.cs)
+- [x] [Day 8]()
