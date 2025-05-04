@@ -1,5 +1,7 @@
-﻿namespace AdventOfCode.Tests
+﻿namespace AdventOfCode.Tests.Year2015
 {
+    using AdventOfCode.Year2015;
+
     using NUnit.Framework;
 
     [TestFixture]

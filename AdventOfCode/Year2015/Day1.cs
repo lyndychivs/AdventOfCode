@@ -1,4 +1,4 @@
-﻿namespace AdventOfCode
+﻿namespace AdventOfCode.Year2015
 {
     public class Day1
     {
@@ -28,7 +28,7 @@
             return 0;
         }
 
-        private int TranslateDirection(char input)
+        private static int TranslateDirection(char input)
         {
             if (input == '(')
             {
