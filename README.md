@@ -1,2 +1,2 @@
-# AdventOfCode
+# Advent Of Code
 The [Advent of Code](https://adventofcode.com/) challenges in C#
