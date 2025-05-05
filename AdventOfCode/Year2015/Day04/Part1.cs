@@ -1,10 +1,10 @@
-﻿namespace AdventOfCode.Year2015
+﻿namespace AdventOfCode.Year2015.Day04
 {
     using System;
     using System.Security.Cryptography;
     using System.Text;
 
-    public class Day4
+    public class Part1
     {
         public string GetSecretKeyOfHashStartingWithFiveZeros(string input)
         {
@@ -13,23 +13,7 @@
             {
                 string hash = GetHash(input, i);
 
-                if (hash.StartsWith("00000"))
-                {
-                    return i.ToString();
-                }
-
-                i++;
-            }
-        }
-
-        public string GetSecretKeyOfHashStartingWithSixZeros(string input)
-        {
-            int i = 0;
-            while (true)
-            {
-                string hash = GetHash(input, i);
-
-                if (hash.StartsWith("000000"))
+                if (hash.StartsWith(new string('0', 5)))
                 {
                     return i.ToString();
                 }
