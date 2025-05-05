@@ -86,13 +86,13 @@
                     throw new ArgumentException($"Invalid direction: {direction}");
             }
         }
-    }
 
-    public class House(int x, int y)
-    {
-        public int X { get; private set; } = x;
-        public int Y { get; private set; } = y;
+        private class House(int x, int y)
+        {
+            public int X { get; private set; } = x;
+            public int Y { get; private set; } = y;
 
-        public int Visits = 1;
+            public int Visits = 1;
+        }
     }
 }
