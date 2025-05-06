@@ -7,6 +7,8 @@
     [TestFixture]
     public class Day1Tests
     {
+        private const string InputFile = "Year2015\\Day01\\input.txt";
+
         [Test]
         public void Day1_Part1()
         {
@@ -27,16 +29,14 @@
                 Assert.That(part1.CalculateFloor(")))"), Is.EqualTo(-3));
                 Assert.That(part1.CalculateFloor(")())())"), Is.EqualTo(-3));
 
-                Assert.That(part1.CalculateFloor(FileOperations.GetInputFileContent("Year2015\\Day01\\input.txt")), Is.EqualTo(232));
+                Assert.That(part1.CalculateFloor(FileOperations.GetInputFileContent(InputFile)), Is.EqualTo(232));
             }
         }
 
         [Test]
         public void Day1_Part2()
         {
-            var part2 = new Part2();
-
-            Assert.That(part2.CalculateFirstBasementOccurancePosition(FileOperations.GetInputFileContent("Year2015\\Day01\\input.txt")), Is.EqualTo(1783));
+            Assert.That(new Part2().CalculateFirstBasementOccurancePosition(FileOperations.GetInputFileContent(InputFile)), Is.EqualTo(1783));
         }
     }
 }

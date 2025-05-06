@@ -7,6 +7,8 @@
     [TestFixture]
     public class Day4Tests
     {
+        private const string InputFile = "Year2015\\Day04\\input.txt";
+
         [Test]
         public void Day4_Part1()
         {
@@ -17,16 +19,14 @@
                 Assert.That(part1.GetSecretKeyOfHashStartingWithFiveZeros("abcdef"), Is.EqualTo("609043"));
                 Assert.That(part1.GetSecretKeyOfHashStartingWithFiveZeros("pqrstuv"), Is.EqualTo("1048970"));
 
-                Assert.That(part1.GetSecretKeyOfHashStartingWithFiveZeros(FileOperations.GetInputFileContent("Year2015\\Day04\\input.txt")), Is.EqualTo("117946"));
+                Assert.That(part1.GetSecretKeyOfHashStartingWithFiveZeros(FileOperations.GetInputFileContent(InputFile)), Is.EqualTo("117946"));
             }
         }
 
         [Test]
         public void Day4_Part2()
         {
-            var part2 = new Part2();
-
-            Assert.That(part2.GetSecretKeyOfHashStartingWithSixZeros(FileOperations.GetInputFileContent("Year2015\\Day04\\input.txt")), Is.EqualTo("3938038"));
+            Assert.That(new Part2().GetSecretKeyOfHashStartingWithSixZeros(FileOperations.GetInputFileContent(InputFile)), Is.EqualTo("3938038"));
         }
     }
 }

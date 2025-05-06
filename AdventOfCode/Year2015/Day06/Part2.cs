@@ -1,13 +1,22 @@
 ﻿namespace AdventOfCode.Year2015.Day06
 {
-    using System;
     using System.Collections.Generic;
 
     public class Part2
     {
         private readonly Light[,] _lights = new Light[1000, 1000];
 
-        public void ActionInstruction(string input)
+        public int GetTotalLightsBrightnessCountFromInstructions(IEnumerable<string> inputs)
+        {
+            foreach (string s in inputs)
+            {
+                ActionInstruction(s);
+            }
+
+            return GetCountOfLightsBrightness();
+        }
+
+        private void ActionInstruction(string input)
         {
             if (input.StartsWith("turn on "))
             {
@@ -26,18 +35,6 @@
                 string gridValues = input.Replace("toggle ", string.Empty);
                 ExecuteAction(Action.Invert, GetListofLights(gridValues));
             }
-        }
-
-        public int GetTotalLightsBrightnessCountFromInstructions(string input)
-        {
-            string[] inputs = input.Split([ Environment.NewLine ], StringSplitOptions.RemoveEmptyEntries);
-
-            foreach (string s in inputs)
-            {
-                ActionInstruction(s);
-            }
-
-            return GetCountOfLightsBrightness();
         }
 
         private List<Light> GetListofLights(string input)

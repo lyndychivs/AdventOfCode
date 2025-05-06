@@ -1,6 +1,7 @@
 ﻿namespace AdventOfCode.Year2015.Day02
 {
     using System;
+    using System.Collections.Generic;
 
     public class Part2
     {
@@ -9,18 +10,17 @@
             string[] dimensions = input.Split('x');
             if (dimensions.Length != 3)
             {
-                throw new ArgumentException("Invalid input format. Expected format: 'LxWxH'");
+                throw new ArgumentException("Invalid charArray format. Expected format: 'LxWxH'");
             }
 
             return new Box(int.Parse(dimensions[0]), int.Parse(dimensions[1]), int.Parse(dimensions[2]));
         }
 
-        public int CalculateRibbonForAllBoxes(string input)
+        public int CalculateRibbonForAllBoxes(IEnumerable<string> inputs)
         {
-            string[] boxDimensions = input.Split([Environment.NewLine], StringSplitOptions.RemoveEmptyEntries);
             int totalRibbon = 0;
 
-            foreach (string boxDimension in boxDimensions)
+            foreach (string boxDimension in inputs)
             {
                 totalRibbon += GetBoxPerDimensions(boxDimension).RequiredRibbonInFeet;
             }

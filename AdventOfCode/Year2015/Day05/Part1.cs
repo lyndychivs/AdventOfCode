@@ -1,6 +1,5 @@
 ﻿namespace AdventOfCode.Year2015.Day05
 {
-    using System;
     using System.Collections.Generic;
 
     public class Part1
@@ -38,10 +37,8 @@
             return vowelCount >= 3 && hasDoubleLetter;
         }
 
-        public int GetNiceCount(string input)
+        public int GetNiceCount(IEnumerable<string> inputs)
         {
-            string[] inputs = input.Split([ Environment.NewLine ], StringSplitOptions.RemoveEmptyEntries);
-
             int count = 0;
 
             foreach (string s in inputs)

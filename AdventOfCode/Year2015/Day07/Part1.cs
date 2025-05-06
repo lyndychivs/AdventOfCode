@@ -5,22 +5,21 @@
 
     public class Part1
     {
-        private readonly List<CircuitAction> _circuitActions = [];
-
         private readonly Dictionary<string, ushort> _wires = [];
 
-        public ushort GetWireValue(string circuit, string wireKey)
+        public ushort GetWireValue(IEnumerable<string> inputs, string wireKey)
         {
-            string[] circuitActions = circuit.Split([ Environment.NewLine ], StringSplitOptions.RemoveEmptyEntries);
+            _wires.Clear();
 
-            foreach (string action in circuitActions)
+            List<CircuitAction> circuitActions = [];
+            foreach (string action in inputs)
             {
-                _circuitActions.Add(new CircuitAction(action));
+                circuitActions.Add(new CircuitAction(action));
             }
 
             while (!IsWireReady(wireKey))
             {
-                foreach (CircuitAction action in _circuitActions)
+                foreach (CircuitAction action in circuitActions)
                 {
                     ExecuteCircuitAction(action);
                 }

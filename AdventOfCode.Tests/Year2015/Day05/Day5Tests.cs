@@ -7,6 +7,8 @@
     [TestFixture]
     public class Day5Tests
     {
+        private const string InputFile = "Year2015\\Day05\\input.txt";
+
         [Test]
         public void Day5_Part1()
         {
@@ -20,7 +22,7 @@
                 Assert.That(part1.IsNice("haegwjzuvuyypxyu"), Is.False);
                 Assert.That(part1.IsNice("dvszwmarrgswjxmb"), Is.False);
 
-                Assert.That(part1.GetNiceCount(FileOperations.GetInputFileContent("Year2015\\Day05\\input.txt")), Is.EqualTo(255));
+                Assert.That(part1.GetNiceCount(FileOperations.GetInputFileLines(InputFile)), Is.EqualTo(255));
             }
         }
 
@@ -36,7 +38,7 @@
                 Assert.That(part2.IsNice("uurcxstgmygtbstg"), Is.False);
                 Assert.That(part2.IsNice("ieodomkazucvgmuy"), Is.False);
 
-                Assert.That(part2.GetNiceCount(FileOperations.GetInputFileContent("Year2015\\Day05\\input.txt")), Is.EqualTo(55));
+                Assert.That(part2.GetNiceCount(FileOperations.GetInputFileLines(InputFile)), Is.EqualTo(55));
             }
         }
     }

@@ -1,6 +1,7 @@
 ﻿namespace AdventOfCode.Year2015.Day05
 {
     using System;
+    using System.Collections.Generic;
 
     public class Part2
     {
@@ -32,10 +33,8 @@
             return hasPair && hasRepeat;
         }
 
-        public int GetNiceCount(string input)
+        public int GetNiceCount(IEnumerable<string> inputs)
         {
-            string[] inputs = input.Split([Environment.NewLine], StringSplitOptions.RemoveEmptyEntries);
-
             int count = 0;
 
             foreach (string s in inputs)

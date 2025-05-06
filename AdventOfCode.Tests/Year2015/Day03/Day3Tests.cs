@@ -7,6 +7,8 @@
     [TestFixture]
     public class Day3Tests
     {
+        private const string InputFile = "Year2015\\Day03\\input.txt";
+
         [Test]
         public void Day3_Part1()
         {
@@ -18,7 +20,7 @@
                 Assert.That(part1.CalulateHousesVisited("^>v<"), Is.EqualTo(4));
                 Assert.That(part1.CalulateHousesVisited("^v^v^v^v^v"), Is.EqualTo(2));
 
-                Assert.That(part1.CalulateHousesVisited(FileOperations.GetInputFileContent("Year2015\\Day03\\input.txt")), Is.EqualTo(2592));
+                Assert.That(part1.CalulateHousesVisited(FileOperations.GetInputFileContent(InputFile)), Is.EqualTo(2592));
             }
         }
 
@@ -33,7 +35,7 @@
                 Assert.That(part2.CalulateHousesVisitedBySantaAndRobot("^>v<"), Is.EqualTo(3));
                 Assert.That(part2.CalulateHousesVisitedBySantaAndRobot("^v^v^v^v^v"), Is.EqualTo(11));
 
-                Assert.That(part2.CalulateHousesVisitedBySantaAndRobot(FileOperations.GetInputFileContent("Year2015\\Day03\\input.txt")), Is.EqualTo(2360));
+                Assert.That(part2.CalulateHousesVisitedBySantaAndRobot(FileOperations.GetInputFileContent(InputFile)), Is.EqualTo(2360));
             }
         }
     }
