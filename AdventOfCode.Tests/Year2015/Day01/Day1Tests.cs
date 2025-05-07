@@ -10,7 +10,7 @@
         private const string InputFile = "Year2015\\Day01\\input.txt";
 
         [Test]
-        public void Day1_Part1()
+        public void Day01_Part1()
         {
             var part1 = new Part1();
 
@@ -34,7 +34,7 @@
         }
 
         [Test]
-        public void Day1_Part2()
+        public void Day01_Part2()
         {
             Assert.That(new Part2().CalculateFirstBasementOccurancePosition(FileOperations.GetInputFileContent(InputFile)), Is.EqualTo(1783));
         }

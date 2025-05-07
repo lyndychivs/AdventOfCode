@@ -10,7 +10,7 @@
         private const string InputFile = "Year2015\\Day06\\input.txt";
 
         [Test]
-        public void Day6_Part1()
+        public void Day06_Part1()
         {
             using (Assert.EnterMultipleScope())
             {
@@ -23,7 +23,7 @@
         }
 
         [Test]
-        public void Day6_Part2()
+        public void Day06_Part2()
         {
             using (Assert.EnterMultipleScope())
             {

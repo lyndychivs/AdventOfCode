@@ -12,7 +12,7 @@
         private const string InputFile = "Year2015\\Day07\\input.txt";
 
         [Test]
-        public void Day7_Part1()
+        public void Day07_Part1()
         {
             var part1 = new Part1();
 
@@ -32,7 +32,7 @@
         }
 
         [Test]
-        public void Day7_Part2()
+        public void Day07_Part2()
         {
             Assert.That(new Part2().GetWireValue(FileOperations.GetInputFileLines(InputFile), "a", 16_076), Is.EqualTo(2_797));
         }

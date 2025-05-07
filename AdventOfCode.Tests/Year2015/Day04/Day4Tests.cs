@@ -10,7 +10,7 @@
         private const string InputFile = "Year2015\\Day04\\input.txt";
 
         [Test]
-        public void Day4_Part1()
+        public void Day04_Part1()
         {
             var part1 = new Part1();
 
@@ -24,7 +24,7 @@
         }
 
         [Test]
-        public void Day4_Part2()
+        public void Day04_Part2()
         {
             Assert.That(new Part2().GetSecretKeyOfHashStartingWithSixZeros(FileOperations.GetInputFileContent(InputFile)), Is.EqualTo("3938038"));
         }

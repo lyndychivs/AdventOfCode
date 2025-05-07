@@ -10,7 +10,7 @@
         private const string InputFile = "Year2015\\Day02\\input.txt";
 
         [Test]
-        public void Day2_Part1()
+        public void Day02_Part1()
         {
             var part1 = new Part1();
 
@@ -24,7 +24,7 @@
         }
 
         [Test]
-        public void Day2_Part2()
+        public void Day02_Part2()
         {
             var part2 = new Part2();
 
