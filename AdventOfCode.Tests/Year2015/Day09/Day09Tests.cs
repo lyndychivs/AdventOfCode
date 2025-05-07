@@ -16,9 +16,20 @@
         {
             using (Assert.EnterMultipleScope())
             {
-                Assert.That(new Part1().CalculateShortestRouteDistance(FileOperations.GetInputFileLines(ExampleFile)), Is.EqualTo(0));
+                Assert.That(new Part1().CalculateShortestRouteDistance(FileOperations.GetInputFileLines(ExampleFile)), Is.EqualTo(605));
 
-                Assert.That(new Part1().CalculateShortestRouteDistance(FileOperations.GetInputFileLines(InputFile)), Is.EqualTo(0));
+                Assert.That(new Part1().CalculateShortestRouteDistance(FileOperations.GetInputFileLines(InputFile)), Is.EqualTo(117));
+            }
+        }
+
+        [Test]
+        public void Day09_Part2()
+        {
+            using (Assert.EnterMultipleScope())
+            {
+                Assert.That(new Part2().CalculateLongestRouteDistance(FileOperations.GetInputFileLines(ExampleFile)), Is.EqualTo(982));
+
+                Assert.That(new Part2().CalculateLongestRouteDistance(FileOperations.GetInputFileLines(InputFile)), Is.EqualTo(909));
             }
         }
     }

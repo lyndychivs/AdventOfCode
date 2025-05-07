@@ -4,13 +4,13 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    public class Part1
+    public class Part2
     {
         private readonly List<Route> _knownRoutes = [];
 
         private readonly List<string> _knownDestinations = [];
 
-        public int CalculateShortestRouteDistance(IEnumerable<string> inputs)
+        public int CalculateLongestRouteDistance(IEnumerable<string> inputs)
         {
             foreach (string input in inputs)
             {
@@ -25,18 +25,18 @@
                 List<Route> journey = [];
                 for (int i = 0; i < permutation.Length - 1; i++)
                 {
-                    journey.Add(GetKnownRoute(permutation[i], permutation[i+1]));
+                    journey.Add(GetKnownRoute(permutation[i], permutation[i + 1]));
                 }
 
                 routes.Add(journey);
             }
 
-            return GetShortestRouteDistance(routes);
+            return GetLongestRouteDistance(routes);
         }
 
-        private int GetShortestRouteDistance(List<List<Route>> allJourneys)
+        private int GetLongestRouteDistance(List<List<Route>> allJourneys)
         {
-            int shortestDistance = int.MaxValue;
+            int longestDistance = int.MinValue;
 
             foreach (List<Route> journey in allJourneys)
             {
@@ -47,13 +47,13 @@
                     journeyDistance += route.Distance;
                 }
 
-                if (journeyDistance < shortestDistance)
+                if (journeyDistance > longestDistance)
                 {
-                    shortestDistance = journeyDistance;
+                    longestDistance = journeyDistance;
                 }
             }
 
-            return shortestDistance;
+            return longestDistance;
         }
 
         private Route GetKnownRoute(string source, string destination)
@@ -68,7 +68,7 @@
                 return [[.. destinations]];
             }
 
-            return destinations.SelectMany(x => GetRoutePermutations([.. destinations.Except([ x ])]),
+            return destinations.SelectMany(x => GetRoutePermutations([.. destinations.Except([x])]),
                 (x, y) => new[] { x }.Concat(y).ToArray());
         }
 
