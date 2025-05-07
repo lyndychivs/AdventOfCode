@@ -5,7 +5,7 @@
     using NUnit.Framework;
 
     [TestFixture]
-    public class Day3Tests
+    public class Day03Tests
     {
         private const string InputFile = "Year2015\\Day03\\input.txt";
 
