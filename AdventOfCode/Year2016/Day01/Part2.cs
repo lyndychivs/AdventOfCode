@@ -3,9 +3,9 @@
     using System;
     using System.Collections.Generic;
 
-    public class Part1
+    public class Part2
     {
-        public int GetDistanceFromPosition(string inputs)
+        public int GetDistanceFromFirstPositionVisitedTwice(string inputs)
         {
             var position = new Position();
 
@@ -13,7 +13,12 @@
 
             foreach (Action action in actions)
             {
-                position.ActOn(action);
+                bool isPositionKnown = position.ActOn(action);
+
+                if (isPositionKnown)
+                {
+                    return GetDistanceFrom(position);
+                }
             }
 
             return GetDistanceFrom(position);
@@ -37,7 +42,7 @@
                     _ => throw new ArgumentException($"Invalid {nameof(input)}: {input}")
                 };
 
-                if (!int.TryParse(input[1.. ], out int distance))
+                if (!int.TryParse(input[1..], out int distance))
                 {
                     throw new ArgumentException($"Invalid {nameof(input)}: {input}");
                 }
@@ -61,18 +66,36 @@
             Right,
         }
 
-        private class Position()
+        private class Position
         {
+            private readonly HashSet<(int, int)> _visitedPositions = [];
+
             private Facing _facing = Facing.North;
 
             public int X { get; private set; } = 0;
 
             public int Y { get; private set; } = 0;
 
-            public void ActOn(Action action)
+            public Position()
+            {
+                _ = _visitedPositions.Add((X, Y));
+            }
+
+            public bool ActOn(Action action)
             {
                 Turn(action.Direction);
-                Move(action.Distance);
+
+                for (int i = 1; i <= action.Distance; i++)
+                {
+                    Move(1);
+
+                    if (!_visitedPositions.Add((X, Y)))
+                    {
+                        return true;
+                    }
+                }
+
+                return false;
             }
 
             private void Move(int distance)
