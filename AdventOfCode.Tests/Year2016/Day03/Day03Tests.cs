@@ -1,7 +1,5 @@
 ﻿namespace AdventOfCode.Tests.Year2016.Day03
 {
-    using System.Linq;
-
     using AdventOfCode.Year2016.Day03;
 
     using NUnit.Framework;
@@ -20,7 +18,7 @@
         [Test]
         public void Day03_Part2()
         {
-            Assert.That(new Part2().GetValidTriangleCount(FileOperations.GetInputFileLines(InputFilePath).ToList()), Is.EqualTo(1836));
+            Assert.That(new Part2().GetValidTriangleCount([.. FileOperations.GetInputFileLines(InputFilePath)]), Is.EqualTo(1836));
         }
     }
 }
