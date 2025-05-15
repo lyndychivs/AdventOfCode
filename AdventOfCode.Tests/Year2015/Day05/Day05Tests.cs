@@ -7,7 +7,7 @@
     [TestFixture]
     public class Day05Tests
     {
-        private const string InputFile = "Year2015\\Part1\\input.txt";
+        private const string InputFile = "Year2015\\Day05\\input.txt";
 
         [Test]
         public void Day05_Part1()
