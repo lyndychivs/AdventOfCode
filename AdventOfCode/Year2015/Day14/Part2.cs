@@ -87,11 +87,11 @@
         {
             private int _points = 0;
 
-            private int _speedPerSecond = speedPerSecond;
+            private readonly int _speedPerSecond = speedPerSecond;
 
-            private int _flyTimePerSecond = flyTimePerSecond;
+            private readonly int _flyTimePerSecond = flyTimePerSecond;
 
-            private int _restTimePerSecond = restTimePerSecond;
+            private readonly int _restTimePerSecond = restTimePerSecond;
 
             public string Name { get; } = name;
 
