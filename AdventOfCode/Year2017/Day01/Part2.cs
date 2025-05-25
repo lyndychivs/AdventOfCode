@@ -22,7 +22,7 @@
 
         private int GetNextIndex(int index, int length)
         {
-            return (index + length / 2) % length;
+            return (index + (length / 2)) % length;
         }
     }
 }
