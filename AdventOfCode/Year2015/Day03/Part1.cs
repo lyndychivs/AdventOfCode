@@ -31,19 +31,14 @@
 
         private House GetNextHouse(char direction, House house)
         {
-            switch(direction)
+            return direction switch
             {
-                case '>':
-                    return new House(house.X + 1, house.Y);
-                case '<':
-                    return new House(house.X - 1, house.Y);
-                case '^':
-                    return new House(house.X, house.Y + 1);
-                case 'v':
-                    return new House(house.X, house.Y - 1);
-                default:
-                    throw new ArgumentException($"Invalid direction: {direction}");
-            }
+                '>' => new House(house.X + 1, house.Y),
+                '<' => new House(house.X - 1, house.Y),
+                '^' => new House(house.X, house.Y + 1),
+                'v' => new House(house.X, house.Y - 1),
+                _ => throw new ArgumentException($"Invalid direction: {direction}"),
+            };
         }
 
         private class House(int x, int y)

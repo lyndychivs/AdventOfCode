@@ -51,7 +51,7 @@
 
                     if (result[position3] == 19690720)
                     {
-                        return (100 * result[1] + result[2]).ToString();
+                        return ((100 * result[1]) + result[2]).ToString();
                     }
 
                     index += 3;
@@ -69,7 +69,7 @@
 
                     if (result[position3] == 19690720)
                     {
-                        return (100 * result[1] + result[2]).ToString();
+                        return ((100 * result[1]) + result[2]).ToString();
                     }
 
                     index += 3;
