@@ -1,0 +1,118 @@
+﻿namespace AdventOfCode.Year2024.Day02
+{
+    using System;
+    using System.Collections.Generic;
+
+    public class Part2
+    {
+        public int GetSumOfSafeReports(IEnumerable<string> inputs)
+        {
+            int sumOfSafeReports = 0;
+            foreach (string input in inputs)
+            {
+                var report = new Report(input);
+                if (report.IsSafe())
+                {
+                    sumOfSafeReports++;
+                }
+            }
+
+            return sumOfSafeReports;
+        }
+
+        private class Report
+        {
+            public Report(string input)
+            {
+                string[] parts = input.Split(" ");
+                foreach (string part in parts)
+                {
+                    Levels.Add(int.Parse(part));
+                }
+
+                OriginalLevels = [.. Levels];
+            }
+
+            private readonly List<int> OriginalLevels = [];
+
+            private List<int> Levels { get; set; } = [];
+
+            public bool IsSafe()
+            {
+                bool result = IsAllLevelsWithinRange() && IsLevelsEitherAllIncrementingOrDecrementing();
+                if (result)
+                {
+                    return true;
+                }
+
+                for (int i = 0; i < OriginalLevels.Count; i++)
+                {
+                    Levels.RemoveAt(i);
+
+                    result = IsAllLevelsWithinRange() && IsLevelsEitherAllIncrementingOrDecrementing();
+                    if (result)
+                    {
+                        return true;
+                    }
+
+                    Levels = [.. OriginalLevels];
+                }
+
+                return result;
+            }
+
+            private bool IsAllLevelsWithinRange()
+            {
+                for (int i = 0; i < Levels.Count - 1; i++)
+                {
+                    int diff = Math.Abs(Levels[i] - Levels[i + 1]);
+
+                    if (diff == 0)
+                    {
+                        return false;
+                    }
+
+                    if (diff > 3)
+                    {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+
+            private bool IsLevelsEitherAllIncrementingOrDecrementing()
+            {
+                return IsAllLevelsIncremented() | IsAllLevelsDecremented();
+            }
+
+            private bool IsAllLevelsIncremented()
+            {
+                bool response = true;
+                for (int i = 0; i < Levels.Count - 1; i++)
+                {
+                    if (Levels[i] < Levels[i + 1])
+                    {
+                        response = false;
+                    }
+                }
+
+                return response;
+            }
+
+            private bool IsAllLevelsDecremented()
+            {
+                bool response = true;
+                for (int i = 0; i < Levels.Count - 1; i++)
+                {
+                    if (Levels[i] > Levels[i + 1])
+                    {
+                        response = false;
+                    }
+                }
+
+                return response;
+            }
+        }
+    }
+}
